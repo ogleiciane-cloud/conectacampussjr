@@ -1,0 +1,157 @@
+1 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário para cadastro de notícias e avisos">
+  <title>Cadastro de Notícias - Conecta Campus Ribamar</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>📝 Conecta Campus Ribamar</h1>
+      <p>IFMA - Campus São José de Ribamar</p>
+      <nav>
+        <a href="homepage.html">Início</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="avisos.html">Avisos</a>
+        <a href="calendario.html">Calendário</a>
+        <a href="documentos.html">Documentos</a>
+        <a href="cadastro.html" class="active">Cadastrar Notícia</a>
+        <a href="index.html" class="ml-auto">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="cadastro-container">
+        <div class="card mx-auto max-w-800">
+          <h2>🗞️ Publicar Nova Notícia</h2>
+          <p class="text-muted">Compartilhe avisos, notícias e eventos com a comunidade escolar</p>
+
+          <form id="formCadastro">
+            <!-- Título -->
+            <div class="form-group">
+              <label for="titulo">Título *</label>
+              <input 
+                id="titulo"
+                name="titulo"
+                type="text"
+                placeholder="Digite o título da notícia ou aviso"
+                required
+              >
+            </div>
+
+            <!-- Categoria -->
+            <div class="form-group">
+              <label for="categoria">Categoria *</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="noticia">📰 Notícia</option>
+                <option value="aviso">⚠️ Aviso</option>
+                <option value="evento">🎉 Evento</option>
+                <option value="seminario">🎓 Seminário</option>
+                <option value="edital">📋 Edital</option>
+              </select>
+            </div>
+
+            <!-- Data do Evento (opcional) -->
+            <div class="form-group">
+              <label for="dataEvento">Data do Evento (opcional)</label>
+              <input 
+                id="dataEvento"
+                name="dataEvento"
+                type="date"
+              >
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="form-group">
+              <label for="conteudo">Conteúdo *</label>
+              <textarea
+                id="conteudo"
+                name="conteudo"
+                placeholder="Digite o conteúdo completo da notícia ou aviso"
+                rows="8"
+                required
+              ></textarea>
+              <small class="text-muted">Mínimo de 10 caracteres</small>
+            </div>
+
+            <!-- Autor -->
+            <div class="form-group">
+              <label for="autor">Autor *</label>
+              <input 
+                id="autor"
+                name="autor"
+                type="text"
+                placeholder="Seu nome ou departamento"
+                required
+              >
+            </div>
+
+            <!-- Imagem (opcional) -->
+            <div class="form-group">
+              <label for="imagem">Imagem (opcional)</label>
+              <input
+                id="imagem"
+                name="imagem"
+                type="file"
+                accept="image/*"
+              >
+              <small class="text-muted">Formatos aceitos: JPG, PNG, WebP (máx. 5MB)</small>
+            </div>
+
+            <!-- Tags -->
+            <div class="form-group">
+              <label for="tags">Tags (opcional)</label>
+              <input 
+                id="tags"
+                name="tags"
+                type="text"
+                placeholder="Digite tags separadas por vírgula (ex: educação, tecnologia)"
+              >
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-large">
+                ✓ Publicar
+              </button>
+              <button type="reset" class="btn btn-outline btn-large">
+                ↺ Limpar
+              </button>
+              <a href="noticias.html" class="btn btn-light btn-large">
+                ← Voltar
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box card bg-soft-alt border-left-primary mt-5">
+          <h3>💡 Dicas para uma boa publicação:</h3>
+          <ul class="list-group text-muted">
+            <li>Use títulos descritivos e atrativos</li>
+            <li>Organize o conteúdo em parágrafos claros</li>
+            <li>Adicione uma imagem relevante quando possível</li>
+            <li>Inclua datas e horários importantes</li>
+            <li>Revise a publicação antes de enviar</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="text-center text-muted">© 2026 Conecta Campus - IFMA São José de Ribamar. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

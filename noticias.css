@@ -1,0 +1,48 @@
+/* Filtro de categorias */
+
+input{
+    display:none;
+}
+
+label{
+    display:inline-block;
+    padding:8px 18px;
+    margin:5px;
+    background:#0056b3;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+label:hover{
+    background:#003f88;
+}
+
+.noticias{
+    margin-top:20px;
+}
+
+.card{
+    display:none;
+    background:#fff;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+
+#todas:checked ~ .noticias .card{
+    display:block;
+}
+
+#esportes:checked ~ .noticias .esportes{
+    display:block;
+}
+
+#tecnologia:checked ~ .noticias .tecnologia{
+    display:block;
+}
+
+#politica:checked ~ .noticias .politica{
+    display:block;
+}
