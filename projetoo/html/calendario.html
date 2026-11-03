@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calendário institucional do Conecta Campus">
+  <title>Calendário Institucional - IFMA SJR</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/calendario.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>📅 Conecta Campus Ribamar</h1>
+      <p>IFMA - Campus São José de Ribamar</p>
+      <nav>
+        <a href="homepage.html">Início</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="avisos.html">Avisos</a>
+        <a href="calendario.html" class="active">Calendário</a>
+        <a href="documentos.html">Documentos</a>
+        <a href="cadastro.html">Cadastrar Notícia</a>
+        <a href="index.html" class="ml-auto">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="mb-5">
+        <h2 class="mb-4">📆 Calendário Acadêmico 2026</h2>
+
+        <!-- Calendário Interativo -->
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button id="prevBtn" class="btn btn-small">← Anterior</button>
+            <h3 id="monthYear"></h3>
+            <button id="nextBtn" class="btn btn-small">Próximo →</button>
+          </div>
+
+          <div class="calendar-weekdays">
+            <div>Dom</div>
+            <div>Seg</div>
+            <div>Ter</div>
+            <div>Qua</div>
+            <div>Qui</div>
+            <div>Sex</div>
+            <div>Sáb</div>
+          </div>
+
+          <div class="calendar-days" id="calendarDays"></div>
+        </div>
+
+        <!-- Legenda -->
+        <div class="legend card mt-4">
+          <h3>📌 Legenda de Eventos</h3>
+          <div class="grid grid-legend gap-3">
+            <div class="flex items-center gap-2">
+              <div class="legend-key bg-secondary"></div>
+              <span>Evento Institucional</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="legend-key bg-info"></div>
+              <span>Período de Aulas</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="legend-key bg-error"></div>
+              <span>Período de Avaliação</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="legend-key bg-warning"></div>
+              <span>Feriado</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="legend-key bg-success"></div>
+              <span>Recesso</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="legend-key bg-primary"></div>
+              <span>Data Importante</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Eventos Importantes -->
+      <section class="mt-5 mb-5">
+        <h2 class="mb-4">🗓️ Principais Datas de 2026</h2>
+        <div class="grid grid-2">
+          <div class="card highlight">
+            <div class="card-header">
+              <span class="badge badge-secondary">Início</span>
+              <span class="text-muted">25 de Janeiro</span>
+            </div>
+            <h3>Início do Período Letivo</h3>
+            <p>Aulas começam para todos os cursos e níveis de educação</p>
+          </div>
+
+          <div class="card highlight">
+            <div class="card-header">
+              <span class="badge badge-error">Avaliações</span>
+              <span class="text-muted">20 a 30 de Abril</span>
+            </div>
+            <h3>Período de Avaliações (1º Bim)</h3>
+            <p>Avaliações e testes para todas as disciplinas</p>
+          </div>
+
+          <div class="card highlight">
+            <div class="card-header">
+              <span class="badge badge-warning">Feriado</span>
+              <span class="text-muted">07 de Setembro</span>
+            </div>
+            <h3>Independência do Brasil</h3>
+            <p>Feriado nacional - Não haverá aulas</p>
+          </div>
+
+          <div class="card highlight">
+            <div class="card-header">
+              <span class="badge badge-secondary">Evento</span>
+              <span class="text-muted">12 de Agosto</span>
+            </div>
+            <h3>JIFMA 2026</h3>
+            <p>Jornada de Iniciação Científica e Tecnológica</p>
+          </div>
+
+          <div class="card highlight">
+            <div class="card-header">
+              <span class="badge badge-success">Recesso</span>
+              <span class="text-muted">15 a 21 de Julho</span>
+            </div>
+            <h3>Semana de Recesso</h3>
+            <p>Campus fechado para manutenção e planejamento</p>
+          </div>
+
+          <div class="card highlight">
+            <div class="card-header">
+              <span class="badge">Fim</span>
+              <span class="text-muted">18 de Dezembro</span>
+            </div>
+            <h3>Encerramento do Ano Letivo</h3>
+            <p>Término do período acadêmico de 2026</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cronograma Detalhado -->
+      <section class="mt-5">
+        <h2 class="mb-4">📋 Cronograma Detalhado</h2>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Período</th>
+                <th>Datas</th>
+                <th>Descrição</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1º Semestre</strong></td>
+                <td>25 jan - 30 jun</td>
+                <td>Período de aulas e avaliações</td>
+                <td><span class="badge badge-success">Em andamento</span></td>
+              </tr>
+              <tr>
+                <td>1º Bimestre</td>
+                <td>25 jan - 20 abr</td>
+                <td>Aulas e avaliações contínuas</td>
+                <td><span class="badge badge-success">Ativo</span></td>
+              </tr>
+              <tr>
+                <td>2º Bimestre</td>
+                <td>21 abr - 30 jun</td>
+                <td>Aulas e avaliações contínuas</td>
+                <td><span class="badge">Próximo</span></td>
+              </tr>
+              <tr>
+                <td><strong>Recesso</strong></td>
+                <td>15 - 21 de julho</td>
+                <td>Campus fechado</td>
+                <td><span class="badge badge-warning">Planejado</span></td>
+              </tr>
+              <tr>
+                <td><strong>2º Semestre</strong></td>
+                <td>22 jul - 18 dez</td>
+                <td>Período de aulas e avaliações</td>
+                <td><span class="badge">Próximo</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Info Box -->
+      <div class="alert alert-info mt-5">
+        <strong>ℹ️ Informação Importante:</strong> Este calendário pode sofrer alterações conforme necessário. Recomendamos verificar regularmente os avisos institucionales para atualizações. Para dúvidas, contate a secretaria acadêmica.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="text-center text-muted">© 2026 Conecta Campus - IFMA São José de Ribamar. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/calendario.js"></script>
+</body>
+</html>

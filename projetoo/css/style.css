@@ -1,0 +1,177 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#e8f5e9;
+}
+
+header{
+    background:#006633;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    margin:0;
+}
+
+header p{
+    margin-top:10px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.mes{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.mes button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#008f4c;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.mes button:hover{
+    background:#006633;
+}
+
+.mes h2{
+    color:#006633;
+}
+
+.dias-semana{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+}
+
+.dias-semana div{
+    background:#008f4c;
+    color:white;
+    text-align:center;
+    padding:15px;
+    font-weight:bold;
+    border-radius:8px;
+}
+
+.dias{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+    margin-top:8px;
+}
+
+.dias div{
+    height:90px;
+    background:#f3fff5;
+    border:2px solid #cce8d4;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:18px;
+    color:#006633;
+    transition:.3s;
+}
+
+.dias div:hover{
+    background:#d9f7df;
+    transform:translateY(-4px);
+}
+
+.vazio{
+    border:none !important;
+    background:transparent !important;
+}
+
+.evento{
+    background:#00a651 !important;
+    color:white !important;
+}
+
+.prova{
+    background:#2e7d32 !important;
+    color:white !important;
+}
+
+.feriado{
+    background:#81c784 !important;
+    color:white !important;
+}
+
+.legenda{
+    margin-top:30px;
+    border-top:2px solid #ddd;
+    padding-top:20px;
+}
+
+.legenda h3{
+    color:#006633;
+}
+
+.legenda p{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.cor{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    display:inline-block;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#006633;
+    font-weight:bold;
+}
+
+@media(max-width:700px){
+
+}
+
+.dias div{
+    height:70px;
+    font-size:15px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+.calendarios{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container{
+    width: 420px;
+    margin: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}

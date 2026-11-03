@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Painel administrativo do Conecta Campus">
+  <title>Painel Administrativo - Conecta Campus</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <!-- HEADER ADMINISTRATIVO: identifica a área restrita sem tirar o usuário do painel. -->
+  <header><div class="container"><h1>Painel Administrativo</h1><p>Gerencie notícias, esportes, editais e avisos do campus.</p><nav aria-label="Navegação administrativa"><a href="homepage.html">Voltar ao portal</a><a href="noticias.html">Ver site público</a></nav></div></header>
+
+  <main class="admin-page" data-admin-panel>
+    <div class="container">
+      <!-- ABAS DE GESTÃO: trocam a área editada sem redirecionar para o site público. -->
+      <section class="admin-toolbar"><div><h2>Central de gerenciamento</h2><p>Escolha uma área para criar, editar ou excluir informações.</p></div><button type="button" class="btn btn-outline" data-logout>Sair</button></section>
+      <div class="admin-tabs" role="tablist" aria-label="Áreas administrativas">
+        <button type="button" class="admin-tab is-active" role="tab" aria-selected="true" aria-controls="admin-noticias" data-admin-tab="noticias">Notícias</button>
+        <button type="button" class="admin-tab" role="tab" aria-selected="false" aria-controls="admin-esportes" data-admin-tab="esportes">Esportes</button>
+        <button type="button" class="admin-tab" role="tab" aria-selected="false" aria-controls="admin-editais" data-admin-tab="editais">Editais</button>
+        <button type="button" class="admin-tab" role="tab" aria-selected="false" aria-controls="admin-avisos" data-admin-tab="avisos">Avisos</button>
+      </div>
+
+      <!-- ABA NOTÍCIAS: mantém o gerenciamento das publicações dentro do painel. -->
+      <section class="admin-view is-active" id="admin-noticias" role="tabpanel" data-admin-view="noticias">
+        <div class="admin-layout"><section class="card admin-form"><h2>Nova notícia</h2><form id="adminNewsForm"><div class="form-group"><label for="adminTitulo">Título *</label><input id="adminTitulo" name="titulo" type="text" required></div><div class="form-group"><label for="adminCategoria">Categoria *</label><select id="adminCategoria" name="categoria" required><option value="">Selecione</option><option value="noticia">Notícia</option><option value="evento">Evento</option><option value="seminario">Seminário</option><option value="edital">Edital</option></select></div><div class="form-group"><label for="adminDataEvento">Data do evento</label><input id="adminDataEvento" name="dataEvento" type="date"></div><div class="form-group"><label for="adminConteudo">Conteúdo *</label><textarea id="adminConteudo" name="conteudo" rows="7" required></textarea></div><div class="form-group"><label for="adminAutor">Autor *</label><input id="adminAutor" name="autor" type="text" required></div><div class="form-group"><label for="adminTags">Tags</label><input id="adminTags" name="tags" type="text"></div><div class="form-actions"><button type="submit" class="btn btn-block">Publicar notícia</button><button type="reset" class="btn btn-outline btn-block">Limpar</button></div></form></section><section><h2>Notícias publicadas</h2><div class="admin-list" data-admin-list="noticias"></div></section></div>
+      </section>
+
+      <!-- ABA ESPORTES: permite atualizar placares, partidas e situação dos jogos. -->
+      <section class="admin-view" id="admin-esportes" role="tabpanel" data-admin-view="esportes" hidden>
+        <div class="admin-layout"><section class="card admin-form"><h2>Novo jogo ou placar</h2><form id="adminSportsForm"><div class="form-group"><label for="sportsModalidade">Modalidade *</label><input id="sportsModalidade" name="modalidade" placeholder="Ex.: Futsal" required></div><div class="form-group"><label for="sportsEquipeA">Equipe 1 *</label><input id="sportsEquipeA" name="equipeA" required></div><div class="form-group"><label for="sportsEquipeB">Equipe 2 *</label><input id="sportsEquipeB" name="equipeB" required></div><div class="form-grid"><div class="form-group"><label for="sportsPlacarA">Placar 1 *</label><input id="sportsPlacarA" name="placarA" type="number" min="0" value="0" required></div><div class="form-group"><label for="sportsPlacarB">Placar 2 *</label><input id="sportsPlacarB" name="placarB" type="number" min="0" value="0" required></div></div><div class="form-grid"><div class="form-group"><label for="sportsData">Data *</label><input id="sportsData" name="data" type="date" required></div><div class="form-group"><label for="sportsHora">Horário</label><input id="sportsHora" name="hora" type="time"></div></div><div class="form-group"><label for="sportsStatus">Situação *</label><select id="sportsStatus" name="status" required><option value="agendado">Agendado</option><option value="andamento">Em andamento</option><option value="finalizado">Finalizado</option></select></div><div class="form-actions"><button type="submit" class="btn btn-block">Salvar jogo</button><button type="reset" class="btn btn-outline btn-block">Limpar</button></div></form></section><section><h2>Jogos e resultados</h2><div class="admin-list" data-admin-list="esportes"></div></section></div>
+      </section>
+
+      <!-- ABA EDITAIS: centraliza a criação, atualização e remoção das oportunidades. -->
+      <section class="admin-view" id="admin-editais" role="tabpanel" data-admin-view="editais" hidden>
+        <div class="admin-layout"><section class="card admin-form"><h2>Novo edital</h2><form id="adminEditaisForm"><div class="form-group"><label for="editalTitulo">Título *</label><input id="editalTitulo" name="titulo" required></div><div class="form-grid"><div class="form-group"><label for="editalArea">Área *</label><select id="editalArea" name="area" required><option value="pesquisa">Pesquisa</option><option value="extensao">Extensão</option><option value="bolsas">Bolsas</option><option value="academico">Acadêmico</option></select></div><div class="form-group"><label for="editalStatus">Status *</label><select id="editalStatus" name="status" required><option value="aberto">Aberto</option><option value="breve">Em breve</option><option value="encerrado">Encerrado</option></select></div></div><div class="form-grid"><div class="form-group"><label for="editalAbertura">Abertura *</label><input id="editalAbertura" name="abertura" type="date" required></div><div class="form-group"><label for="editalEncerramento">Encerramento *</label><input id="editalEncerramento" name="encerramento" type="date" required></div></div><div class="form-group"><label for="editalAgencia">Agência financiadora *</label><input id="editalAgencia" name="agencia" placeholder="Ex.: IFMA / CNPq" required></div><div class="form-group"><label for="editalDescricao">Descrição *</label><textarea id="editalDescricao" name="descricao" rows="5" required></textarea></div><div class="form-actions"><button type="submit" class="btn btn-block">Salvar edital</button><button type="reset" class="btn btn-outline btn-block">Limpar</button></div></form></section><section><h2>Editais cadastrados</h2><div class="admin-list" data-admin-list="editais"></div></section></div>
+      </section>
+
+      <!-- ABA AVISOS: permite definir gravidade urgente, importante ou leve. -->
+      <section class="admin-view" id="admin-avisos" role="tabpanel" data-admin-view="avisos" hidden>
+        <div class="admin-layout"><section class="card admin-form"><h2>Novo aviso</h2><form id="adminAvisosForm"><div class="form-group"><label for="avisoTitulo">Título *</label><input id="avisoTitulo" name="titulo" required></div><div class="form-group"><label for="avisoGravidade">Gravidade *</label><select id="avisoGravidade" name="gravidade" required><option value="urgente">Urgente</option><option value="importante">Importante</option><option value="leve">Leve</option></select></div><div class="form-group"><label for="avisoData">Data *</label><input id="avisoData" name="data" type="date" required></div><div class="form-group"><label for="avisoConteudo">Mensagem *</label><textarea id="avisoConteudo" name="conteudo" rows="7" required></textarea></div><div class="form-actions"><button type="submit" class="btn btn-block">Salvar aviso</button><button type="reset" class="btn btn-outline btn-block">Limpar</button></div></form></section><section><h2>Avisos publicados</h2><div class="admin-list" data-admin-list="avisos"></div></section></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- RODAPÉ ADMINISTRATIVO -->
+  <footer><div class="container"><p>Área administrativa local · Conecta Campus Ribamar</p></div></footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
